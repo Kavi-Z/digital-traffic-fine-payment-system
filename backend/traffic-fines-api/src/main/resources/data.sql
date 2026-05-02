@@ -1,0 +1,1 @@
+INSERT INTO fines (reference_number, category_identifier, amount, driver_license_number, status) VALUES ('REF123', 'SPEEDING', 2500.0, 'B123456', 'UNPAID');
