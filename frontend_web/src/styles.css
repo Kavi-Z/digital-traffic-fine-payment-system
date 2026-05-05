@@ -1,0 +1,356 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/playfair-display/900.css";
+@import "@fontsource/crimson-text/400.css";
+@import "@fontsource/crimson-text/600.css";
+@import "@fontsource/crimson-text/700.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-mid: var(--navy-mid);
+  --color-navy-light: var(--navy-light);
+  --color-gold: var(--gold-primary);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-crimson: var(--crimson);
+  --color-cream: var(--cream);
+  --color-ivory: var(--ivory);
+  --color-brass: var(--brass);
+  --font-display: "Playfair Display", serif;
+  --font-serif: "Crimson Text", serif;
+}
+
+:root {
+  --radius: 0.25rem;
+  --navy-deep: oklch(0.18 0.04 260);
+  --navy-mid: oklch(0.24 0.05 260);
+  --navy-light: oklch(0.32 0.06 260);
+  --gold-primary: oklch(0.74 0.13 85);
+  --gold-light: oklch(0.84 0.13 88);
+  --gold-dark: oklch(0.58 0.11 80);
+  --gold-shimmer: oklch(0.92 0.13 92);
+  --crimson: oklch(0.42 0.16 28);
+  --crimson-light: oklch(0.5 0.18 28);
+  --cream: oklch(0.95 0.02 80);
+  --ivory: oklch(0.97 0.015 85);
+  --brass: oklch(0.62 0.13 75);
+
+  --background: var(--navy-deep);
+  --foreground: var(--cream);
+  --card: var(--navy-mid);
+  --card-foreground: var(--cream);
+  --popover: var(--navy-mid);
+  --popover-foreground: var(--cream);
+  --primary: var(--gold-primary);
+  --primary-foreground: var(--navy-deep);
+  --secondary: var(--navy-light);
+  --secondary-foreground: var(--cream);
+  --muted: var(--navy-light);
+  --muted-foreground: oklch(0.78 0.06 80);
+  --accent: var(--gold-primary);
+  --accent-foreground: var(--navy-deep);
+  --destructive: var(--crimson);
+  --destructive-foreground: var(--cream);
+  --border: oklch(0.74 0.13 85 / 35%);
+  --input: oklch(0.74 0.13 85 / 25%);
+  --ring: var(--gold-primary);
+}
+
+.dark { color-scheme: dark; }
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body { background-color: var(--color-background); color: var(--color-foreground); font-family: var(--font-serif); }
+  h1, h2, h3, h4, h5 { font-family: var(--font-display); letter-spacing: 0.02em; }
+}
+
+/* ===== Ornate components ===== */
+.ornate-card {
+  background: linear-gradient(145deg, oklch(0.24 0.05 260), oklch(0.18 0.04 260));
+  border: 2px solid oklch(0.74 0.13 85 / 0.45);
+  box-shadow:
+    0 2px 0 oklch(0.74 0.13 85 / 0.6),
+    0 20px 60px oklch(0 0 0 / 0.5),
+    inset 0 1px 0 oklch(0.74 0.13 85 / 0.18);
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+.ornate-card::before, .ornate-card::after {
+  content: ""; position: absolute; width: 18px; height: 18px;
+  border: 2px solid var(--gold-primary); pointer-events: none;
+}
+.ornate-card::before { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+.ornate-card::after { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+.ornate-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 2px 0 oklch(0.74 0.13 85 / 0.85),
+    0 30px 80px oklch(0 0 0 / 0.7),
+    inset 0 1px 0 oklch(0.74 0.13 85 / 0.3);
+}
+
+.metallic-btn {
+  background: linear-gradient(135deg, oklch(0.58 0.11 80) 0%, oklch(0.74 0.13 85) 40%, oklch(0.88 0.13 90) 60%, oklch(0.58 0.11 80) 100%);
+  background-size: 220% 100%;
+  background-position: 100% 0;
+  border: none;
+  padding: 14px 36px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: oklch(0.18 0.04 260);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  transition: background-position 0.5s ease, transform 0.1s ease, filter 0.2s;
+  box-shadow: 0 4px 0 oklch(0.4 0.08 75), 0 8px 20px oklch(0 0 0 / 0.5);
+}
+.metallic-btn:hover { background-position: 0% 0; filter: brightness(1.1); }
+.metallic-btn:active { transform: translateY(3px); box-shadow: 0 1px 0 oklch(0.4 0.08 75), 0 4px 10px oklch(0 0 0 / 0.5); }
+.metallic-btn::after {
+  content: ""; position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, oklch(1 0 0 / 0.4), transparent);
+  transform: skewX(-20deg);
+}
+.metallic-btn:hover::after { animation: shimmerSweep 0.9s ease; }
+
+.crimson-btn {
+  background: linear-gradient(135deg, oklch(0.32 0.14 28) 0%, oklch(0.5 0.18 28) 50%, oklch(0.32 0.14 28) 100%);
+  color: var(--gold-light);
+  box-shadow: 0 4px 0 oklch(0.22 0.1 28), 0 8px 20px oklch(0 0 0 / 0.5);
+}
+
+.typewriter-input {
+  background: var(--cream);
+  color: var(--navy-deep);
+  border: 2px solid var(--gold-dark);
+  border-radius: 2px;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  padding: 12px 14px;
+  width: 100%;
+  outline: none;
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  box-shadow: inset 0 2px 4px oklch(0 0 0 / 0.15);
+}
+.typewriter-input:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 3px oklch(0.74 0.13 85 / 0.4), inset 0 2px 4px oklch(0 0 0 / 0.15);
+}
+
+.gold-text { color: var(--gold-primary); }
+.gold-gradient-text {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-primary), var(--gold-dark));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.ornate-divider {
+  display: flex; align-items: center; gap: 12px; margin: 20px 0;
+  color: var(--gold-primary);
+}
+.ornate-divider::before, .ornate-divider::after {
+  content: ""; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.stamp {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2.2rem;
+  letter-spacing: 6px;
+  padding: 8px 22px;
+  border: 4px double currentColor;
+  border-radius: 6px;
+  transform: rotate(-15deg);
+  opacity: 0.92;
+  text-transform: uppercase;
+  animation: stampIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.stamp-verified { color: oklch(0.5 0.18 28); }
+.stamp-paid { color: oklch(0.55 0.16 145); }
+
+@keyframes stampIn {
+  0% { transform: scale(3) rotate(-15deg); opacity: 0; }
+  60% { transform: scale(0.92) rotate(-15deg); opacity: 1; }
+  100% { transform: scale(1) rotate(-15deg); opacity: 0.92; }
+}
+@keyframes shimmerSweep {
+  0% { left: -60%; }
+  100% { left: 120%; }
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px oklch(0.74 0.13 85 / 0.35); }
+  50% { box-shadow: 0 0 40px oklch(0.74 0.13 85 / 0.7), 0 0 60px oklch(0.74 0.13 85 / 0.3); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-8px); }
+  80% { transform: translateX(8px); }
+}
+@keyframes phoneShake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  20% { transform: translateX(-3px) rotate(-6deg); }
+  40% { transform: translateX(3px) rotate(6deg); }
+  60% { transform: translateX(-2px) rotate(-3deg); }
+  80% { transform: translateX(2px) rotate(3deg); }
+}
+@keyframes rippleOut {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+@keyframes drawCheck {
+  to { stroke-dashoffset: 0; }
+}
+
+.fade-up { animation: fadeUp 0.6s ease both; }
+.glow-pulse { animation: glowPulse 2.5s ease-in-out infinite; }
+.shake { animation: shake 0.5s ease; }
+
+.step-circle {
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(145deg, var(--navy-mid), var(--navy-deep));
+  border: 2px solid var(--gold-dark);
+  color: var(--gold-primary);
+  font-family: var(--font-display); font-weight: 700;
+  position: relative; z-index: 2;
+  transition: all 0.3s;
+}
+.step-circle.active {
+  background: linear-gradient(145deg, var(--gold-light), var(--gold-primary));
+  color: var(--navy-deep);
+  border-color: var(--gold-light);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+.step-circle.done {
+  background: linear-gradient(145deg, var(--gold-primary), var(--gold-dark));
+  color: var(--navy-deep);
+}
+
+.dotted-line {
+  flex: 1; height: 0; border-top: 2px dotted var(--gold-dark); margin: 0 8px;
+}
+
+table.gov-table { width: 100%; border-collapse: collapse; }
+table.gov-table thead th {
+  background: linear-gradient(180deg, var(--gold-dark), oklch(0.5 0.1 78));
+  color: var(--navy-deep);
+  font-family: var(--font-display); font-weight: 700;
+  text-align: left; padding: 12px 14px; letter-spacing: 1px;
+  font-size: 0.85rem; text-transform: uppercase;
+  border-bottom: 2px solid var(--gold-primary);
+}
+table.gov-table tbody td { padding: 12px 14px; border-bottom: 1px solid oklch(0.74 0.13 85 / 0.15); }
+table.gov-table tbody tr:nth-child(even) { background: oklch(0.16 0.04 260 / 0.6); }
+table.gov-table tbody tr:hover { background: oklch(0.32 0.06 260 / 0.5); }
+
+.status-badge {
+  display: inline-block; padding: 4px 12px; border-radius: 999px;
+  font-family: var(--font-display); font-weight: 700; font-size: 0.7rem;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  border: 2px solid currentColor;
+}
+.status-paid { color: var(--gold-light); background: oklch(0.74 0.13 85 / 0.1); }
+.status-pending { color: var(--brass); background: oklch(0.62 0.13 75 / 0.1); }
+.status-overdue { color: oklch(0.65 0.18 28); background: oklch(0.42 0.16 28 / 0.15); }
+
+.bg-noise {
+  background-image:
+    radial-gradient(ellipse at top, oklch(0.32 0.06 260 / 0.4), transparent 70%),
+    radial-gradient(ellipse at bottom, oklch(0.42 0.16 28 / 0.15), transparent 70%);
+}
+/* ===== Print Styles for Reports ===== */
+@media print {
+  /* Hide UI elements that shouldn't be printed */
+  header,
+  .no-print,
+  button,
+  input,
+  select {
+    display: none !important;
+  }
+
+  /* Force everything to black and white/light background */
+  body, html {
+    background: #ffffff !important;
+    color: #000000 !important;
+    background-image: none !important;
+  }
+
+  .ornate-card {
+    background: #ffffff !important;
+    border: 1px solid #cccccc !important;
+    box-shadow: none !important;
+    color: #000000 !important;
+    break-inside: avoid;
+    margin-bottom: 20px;
+  }
+
+  .gold-gradient-text, .gold-text {
+    background: none !important;
+    -webkit-text-fill-color: #000000 !important;
+    color: #000000 !important;
+  }
+
+  table.gov-table thead th {
+    background: #f0f0f0 !important;
+    color: #000000 !important;
+    border-bottom: 2px solid #000000 !important;
+  }
+
+  table.gov-table tbody td {
+    border-bottom: 1px solid #dddddd !important;
+    color: #000000 !important;
+  }
+
+  /* Make sure the charts print clearly */
+  .recharts-wrapper {
+    filter: invert(1) hue-rotate(180deg) contrast(1.2);
+  }
+}
+/* Scanner Animation for AI OCR */
+@keyframes scan {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(200px); }
+  100% { transform: translateY(0); }
+}
