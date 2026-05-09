@@ -1,37 +1,66 @@
 package traffic.example.traffic_fines_api.entity;
 
-import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "fines")
-@Data 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Document(collection = "fines")
 public class Fine {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; 
+    private String id;
 
-    @Column(unique = true, nullable = false)
-    private String referenceNumber; 
+    @Indexed(unique = true)
+    private String referenceNumber;
 
-    @Column(nullable = false)
-    private String categoryIdentifier;  
+    private String categoryIdentifier; // e.g. "SPD", "SIG", "LIC", "PKG", "DRK", "OTH"
 
-    @Column(nullable = false)
+    private String categoryName;       // e.g. "Speeding", "Signal Violation"
+
     private Double amount;
 
-    @Column(nullable = false)
     private String driverLicenseNumber;
 
-    @Column(nullable = false)
+    private String driverNic;
+
+    private String driverName;
+
+    // Officer who issued the fine
+    private String issuedByOfficerId;
+    private String issuedByOfficerName;
+    private String issuedByOfficerContact; // for SMS notification
+
+    private String district;
+
+    private String location;
+
+    private String vehicleNumber;
+
+    // UNPAID, PAID, OVERDUE, DISPUTED
+    @Builder.Default
     private String status = "UNPAID";
 
     private LocalDateTime issuedAt;
-     
-    @PrePersist
-    protected void onCreate() {
-        this.issuedAt = LocalDateTime.now();
-    }
+
+    private LocalDateTime paidAt;
+
+    // Payment details (stored after payment)
+    private String paymentTransactionId;
+    private String paymentMethod; // CARD, ONLINE
+
+    private String notes;
+
+    // Merit points deducted
+    @Builder.Default
+    private Integer pointsDeducted = 0;
 }
