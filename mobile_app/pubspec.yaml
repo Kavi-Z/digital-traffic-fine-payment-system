@@ -1,0 +1,67 @@
+name: traffic_fines_mobile
+description: "Sri Lanka Police - Traffic Fine Payment Mobile App. Pay traffic fines on-the-spot using Android."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # HTTP & Networking
+  http: ^1.1.0
+  dio: ^5.3.0
+
+  # State Management
+  provider: ^6.1.0
+
+  # Local Storage
+  shared_preferences: ^2.2.2
+
+  # UI Components
+  flutter_svg: ^2.0.7
+  google_fonts: ^6.1.0
+
+  # Camera & Image Processing
+  camera: ^0.10.5+2
+  image_picker: ^1.0.4
+  permission_handler: ^12.0.1
+
+  # QR/Barcode Scanning
+  mobile_scanner: ^4.0.0
+
+  # Form Validation
+  form_validator: ^2.1.1
+
+  # Date/Time Picking
+  intl: ^0.19.0
+
+  # Animations
+  lottie: ^2.7.0
+
+  # Navigation
+  go_router: ^12.1.0
+
+  # JSON Serialization
+  json_annotation: ^4.8.1
+
+  # Others
+  uuid: ^4.0.0
+  url_launcher: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+  build_runner: ^2.4.6
+  json_serializable: ^6.7.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
