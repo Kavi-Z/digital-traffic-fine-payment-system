@@ -23,9 +23,9 @@ public class Fine {
     @Indexed(unique = true)
     private String referenceNumber;
 
-    private String categoryIdentifier; // e.g. "SPD", "SIG", "LIC", "PKG", "DRK", "OTH"
+    private String categoryIdentifier;  
 
-    private String categoryName;       // e.g. "Speeding", "Signal Violation"
+    private String categoryName;        
 
     private Double amount;
 
