@@ -89,7 +89,7 @@ function Scene() {
     <>
       <ambientLight intensity={0.5} />
       <pointLight position={[5, 8, 5]} intensity={2} color="#E8C97C" />
-      <pointLight position={[-5, 5, -5]} intensity={1} color="#8B1A1A" />
+      <pointLight position={[-5, 5, -5]} intensity={1} color="#8B1A2A" />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
         <planeGeometry args={[6, 8]} />
         <meshStandardMaterial color="#0A1628" metalness={0.3} roughness={0.8} />
