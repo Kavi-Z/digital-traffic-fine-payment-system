@@ -75,7 +75,7 @@ function Pillar({ x, z, height, color, name, amount }: { x: number; z: number; h
         {name}
       </Text>
       {hover && (
-        <Text position={[0, height + 0.55, 0]} fontSize={0.14} color="#F5F0E8" anchorX="center">
+        <Text position={[0, height + 0.55, 0]} fontSize={0.14} color="#F5F0E9" anchorX="center">
           {`LKR ${(amount / 1_000_000).toFixed(1)}M`}
         </Text>
       )}
@@ -88,7 +88,7 @@ function Scene() {
   return (
     <>
       <ambientLight intensity={0.5} />
-      <pointLight position={[5, 8, 5]} intensity={2} color="#E8C96C" />
+      <pointLight position={[5, 8, 5]} intensity={2} color="#E8C97C" />
       <pointLight position={[-5, 5, -5]} intensity={1} color="#8B1A1A" />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
         <planeGeometry args={[6, 8]} />
