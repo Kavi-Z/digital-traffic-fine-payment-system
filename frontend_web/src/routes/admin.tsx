@@ -150,7 +150,7 @@ function Login({ onLogin }: { onLogin: (role: Role, token: string) => void }) {
 const CATEGORY_COLORS: Record<string, string> = {
   SPD: "#C9A84C", SIG: "#8B1A1A", LIC: "#1A3A5C",
   PKG: "#8C6A3C", DRK: "#B5860D", MOB: "#4A7C59",
-  SBT: "#6B4FA0", OVL: "#B05A2F", OTH: "#888",
+  SBT: "#6B4FA0", OVL: "#B05A2F", OTH: "#918b8b",
 };
 
 // ─── Dashboard ──────────────────────────────────────────────
