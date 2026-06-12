@@ -72,7 +72,7 @@ function Landing() {
           {/* NEW: DISPUTE PORTAL CARD */}
           <PortalCard
             to="/dispute"
-            icon={<Scale size={40} />}
+            icon={<Scale size={41} />}
             title={t("card.dispute.title") || "Dispute a Fine"}
             desc={t("card.dispute.desc") || "Submit a formal appeal and upload digital evidence."}
             cta={t("card.dispute.cta") || "Open Tribunal"}

@@ -150,7 +150,7 @@ function Login({ onLogin }: { onLogin: (role: Role, token: string) => void }) {
 const CATEGORY_COLORS: Record<string, string> = {
   SPD: "#C9A84C", SIG: "#8B1A1A", LIC: "#1A3A5C",
   PKG: "#8C6A3C", DRK: "#B5860D", MOB: "#4A7C59",
-  SBT: "#6B4FA0", OVL: "#B05A2F", OTH: "#888",
+  SBT: "#6B4FA0", OVL: "#B05A2F", OTH: "#918b8b",
 };
 
 // ─── Dashboard ──────────────────────────────────────────────
@@ -303,7 +303,7 @@ function Dashboard({ role, onLogout }: { role: Role; onLogout: () => void }) {
             </h3>
             <ResponsiveContainer width="100%" height={240}>
               <BarChart data={districtChartData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(12, 11, 11, 0.05)" />
                 <XAxis dataKey="name" tick={{ fill: "#c9a84c", fontSize: 11 }} />
                 <YAxis tick={{ fill: "#c9a84c", fontSize: 11 }} tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} />
                 <Tooltip formatter={(v: number) => `LKR ${formatLKR(v)}`} contentStyle={{ background: "#0a1628", border: "1px solid #c9a84c" }} />
