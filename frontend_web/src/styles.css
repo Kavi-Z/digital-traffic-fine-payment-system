@@ -155,9 +155,9 @@
 .typewriter-input {
   background: var(--cream);
   color: var(--navy-deep);
-  border: 2px solid var(--gold-dark);
+  border: 2px solid var(--gold-shimmer);
   border-radius: 2px;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.05rem;
   padding: 12px 14px;
   width: 100%;
