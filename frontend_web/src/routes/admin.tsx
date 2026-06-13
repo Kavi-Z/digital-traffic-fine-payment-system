@@ -89,7 +89,7 @@ function Login({ onLogin }: { onLogin: (role: Role, token: string) => void }) {
       saveAuthData(response);
       onLogin(response.role as Role, response.token);
     } catch (error: any) {
-      setErr(error.message || "Authentication failed");
+      setErr(error.message || "Authentication failed, Try again.");
     } finally {
       setLoading(false);
     }
