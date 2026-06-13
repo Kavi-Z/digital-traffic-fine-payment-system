@@ -141,13 +141,13 @@ export function Footer() {
               "© 2026 Sri Lanka Police. All rights reserved."}
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition">
+            <a href="https://www.facebook.com/srilankapoliceofficial/" className="hover:text-white transition">
               {t("footer.facebook") || "Facebook"}
             </a>
             <a href="#" className="hover:text-white transition">
               {t("footer.twitter") || "Twitter"}
             </a>
-            <a href="#" className="hover:text-white transition">
+            <a href="https://www.instagram.com/sri_lanka_police/" className="hover:text-white transition">
               {t("footer.instagram") || "Instagram"}
             </a>
           </div>
