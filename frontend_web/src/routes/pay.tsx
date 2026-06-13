@@ -326,6 +326,7 @@ function PayStep({ fineDetails, onNext }: { fineDetails: any, onNext: (receipt: 
   return (
     <div className="ornate-card p-8 md:p-12 fade-up">
       <h2 className="text-3xl font-display gold-gradient-text text-center">Payment Information</h2>
+      <p className="text-center text-cream/70 text-sm mt-2 font-serif">Enter Your Card Details</p>
       <div className="ornate-divider"><span>❖</span></div>
 
       <CreditCard3D name={name} number={number} expiry={exp} cvv={cvv} flipped={flipped} />

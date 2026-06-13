@@ -74,7 +74,7 @@ function SearchPortal() {
       <main className="max-w-4xl mx-auto px-6 pt-12 pb-20">
         <div className="ornate-card p-8 md:p-12 fade-up">
           <h2 className="text-3xl font-display gold-gradient-text text-center">Driver & Vehicle Records</h2>
-          <p className="text-center text-cream/70 text-sm mt-2 font-serif">Search by National Identity Card (NIC) or Vehicle Registration</p>
+          <p className="text-center text-cream/70 text-sm mt-2 font-serif">Search by National Identity Card (NIC) or Vehicle Registration Number</p>
           <div className="ornate-divider"><span>❖</span></div>
 
           <form onSubmit={handleSearch} className="space-y-6 max-w-xl mx-auto">
