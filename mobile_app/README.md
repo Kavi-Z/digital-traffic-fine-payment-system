@@ -31,6 +31,9 @@ lib/
 ├── router/
 │   └── app_router.dart         # Navigation configuration
 └── screens/
+    ├── auth/
+    │   ├── login_screen.dart    # Authentication screens retained in the codebase
+    │   └── register_screen.dart # Registration screen retained in the codebase
     ├── home/
     │   └── home_screen.dart    # Main payment flow screen
     └── payment/
@@ -87,7 +90,7 @@ The app implements a **3-step payment process**:
 
 ## API Integration
 
-The app connects to the backend API at `http://localhost:8080/api/v1`
+The app connects to the backend API at `http://localhost:8080/api`
 
 ### Key Endpoints Required:
 - `GET /fines/lookup?referenceNumber=X&categoryId=Y` - Search fine by reference
@@ -151,13 +154,12 @@ PaymentProvider
 
 See `pubspec.yaml` for complete list.
 
-## Recent Changes (No Auth Required)
+## Current Flow
 
-- ✅ Removed login and signup screens
-- ✅ Removed authentication provider
-- ✅ Made home screen the entry point
-- ✅ Integrated full payment flow into single experience
-- ✅ Direct access to traffic fine payment
+- ✅ The home screen is the default entry point
+- ✅ The payment flow is organized as a 3-step experience
+- ✅ Authentication screens and provider are still present in the codebase
+- ✅ API client uses a platform-aware base URL for web and Android
 
 ## Future Enhancements
 

@@ -47,7 +47,6 @@ Modern solution for managing traffic violations, processing fines, handling disp
 ### Mobile App
 - **Framework**: Flutter 3.2+
 - **Language**: Dart
-- **State**: Provider
 - **HTTP**: Dio
 - **Features**: Camera, QR Scanner, Mobile Scanner
 
@@ -337,4 +336,4 @@ Development Team - Sri Lanka Police Traffic Management System
 ---
 
 **Version**: 1.0.0  
-**Last Updated**: 2024
+**Last Updated**: 2026
