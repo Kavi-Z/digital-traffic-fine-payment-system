@@ -1,5 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { LanguageProvider } from "@/contexts/LanguageContext"; // <-- ADD THIS IMPORT
+import { Footer } from "@/components/footer/Footer";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -29,6 +30,7 @@ export const Route = createRootRoute({
   component: () => (
     <LanguageProvider>
       <Outlet />
+      <Footer />
     </LanguageProvider>
   ),
   notFoundComponent: NotFoundComponent,
