@@ -159,13 +159,6 @@ const translations = {
     "pay.scanner.status": "ටිකට් රාමුවේ පිහිටුවා සිටින්න.",
     "pay.scanner.reading": "AI එංජින් පාඩ්ය කියවමින්...",
     "pay.scanner.capture": "ටිකට් ග්‍රහණ කරන්න සහ ස්කෑන් කරන්න",
-    "pay.receipt.paid": "ගෙවන ලද මුදල",
-    "pay.receipt.datetime": "දිනය සහ වේලාව",
-    "pay.receipt.txnid": "ගනුදෙනු ID",
-    "pay.receipt.footer": "ශ්‍රී ලංකා පොලිස් • ගිණුම්",
-    "pay.scanner.title": "AI ටිකට් ස්කෑනර්",
-    "pay.scanner.status": "ටිකට් රාමුවේ පිහිටුවා සිටින්න.",
-    "pay.scanner.reading": "AI පාඩ්ය කියවමින්...",
    
 
   },
